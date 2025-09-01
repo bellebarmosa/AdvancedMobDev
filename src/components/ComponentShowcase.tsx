@@ -41,6 +41,36 @@ const ComponentShowcase = () => {
               uri: 'https://reactnative.dev/img/tiny_logo.png',
             }}
           />
+          <Image
+            style={styles.image}
+            source={{
+              uri: 'https://reactnative.dev/img/tiny_logo.png',
+            }}
+          />
+          <Image
+            style={styles.image}
+            source={{
+              uri: 'https://reactnative.dev/img/tiny_logo.png',
+            }}
+          />
+          <Image
+            style={styles.image}
+            source={{
+              uri: 'https://reactnative.dev/img/tiny_logo.png',
+            }}
+          />
+          <Image
+            style={styles.image}
+            source={{
+              uri: 'https://reactnative.dev/img/tiny_logo.png',
+            }}
+          />
+          <Image
+            style={styles.image}
+            source={{
+              uri: 'https://reactnative.dev/img/tiny_logo.png',
+            }}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
