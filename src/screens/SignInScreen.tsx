@@ -8,8 +8,13 @@ import {
   Image,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useNavigation } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import type { RootStackParamList } from "../navigation/AppNavigator";
 
-const ComponentShowcase = () => {
+const SignInScreen = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.card}>
@@ -49,20 +54,15 @@ const ComponentShowcase = () => {
           <Text style={styles.signInText}>Sign In</Text>
         </TouchableOpacity>
 
-        {/* Social Login */}
-        <Text style={styles.socialText}>Be Connect With</Text>
-        <View style={styles.socialContainer}>
-          <TouchableOpacity style={styles.socialIcon}>
-            <Text style={styles.socialLabel}>f</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.socialIcon}>
-            <Text style={styles.socialLabel}>G</Text>
-          </TouchableOpacity>
-        </View>
-
-        {/* Sign Up */}
+        {/* Sign Up Link */}
         <Text style={styles.footerText}>
-          Don’t have an account? <Text style={styles.signUp}>Sign Up</Text>
+          Don’t have an account?{" "}
+          <Text
+            style={styles.signUp}
+            onPress={() => navigation.navigate("SignUp")}
+          >
+            Sign Up
+          </Text>
         </Text>
       </View>
     </SafeAreaView>
@@ -72,7 +72,7 @@ const ComponentShowcase = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "black", // Spotify Green
+    backgroundColor: "black",
     justifyContent: "center",
     alignItems: "center",
   },
@@ -123,22 +123,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 16,
   },
-  socialText: {
-    color: "#aaa",
-    marginBottom: 10,
-  },
-  socialContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
-    marginBottom: 20,
-  },
-  socialIcon: {
-    marginHorizontal: 12,
-  },
-  socialLabel: {
-    color: "#fff",
-    fontSize: 20,
-  },
   footerText: {
     color: "#aaa",
   },
@@ -148,4 +132,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ComponentShowcase;
+export default SignInScreen;

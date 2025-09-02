@@ -2,8 +2,8 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import SignInScreen from "./src/screens/SignInScreen";
-import SignUpScreen from "./src/screens/SignUpScreen";
+import SignInScreen from "../screens/SignInScreen";
+import SignUpScreen from "../screens/SignUpScreen";
 
 export type RootStackParamList = {
   SignIn: undefined;
@@ -12,13 +12,18 @@ export type RootStackParamList = {
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-export default function App() {
+const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="SignIn" screenOptions={{ headerShown: false }}>
+      <Stack.Navigator
+        initialRouteName="SignIn"
+        screenOptions={{ headerShown: false }}
+      >
         <Stack.Screen name="SignIn" component={SignInScreen} />
         <Stack.Screen name="SignUp" component={SignUpScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
+
+export default AppNavigator;
